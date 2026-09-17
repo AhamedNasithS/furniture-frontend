@@ -77,3 +77,47 @@ https://furniture-backend-mu.vercel.app/api/v1
 - Order and address snapshots for historical order accuracy
 - Protected customer and admin API routes
 - Production database hosted on TiDB Cloud
+
+## Screenshots
+
+### Home Page
+
+![FTC Furniture Home](./public/readme/home.png)
+
+### Shop
+
+![FTC Furniture Shop](./public/readme/shop.png)
+
+### Product Details
+
+![FTC Furniture Product Details](./public/readme/products.png)
+
+### Wishlist Details
+
+![FTC Furniture Product Details](./public/readme/wishlist.png)
+
+### Admin Dashboard
+
+![FTC Furniture Admin Dashboard](./public/readme/admin.png)
+
+
+## Project Architecture
+
+FTC Furniture is split into two connected applications:
+
+```text
+Customer / Admin Frontend
+        │
+        │  Axios REST requests
+        ▼
+Next.js Application
+        │
+        ▼
+Node.js + Express REST API
+        │
+        ▼
+Sequelize ORM
+        │
+        ▼
+TiDB Cloud
+(MySQL-compatible database)

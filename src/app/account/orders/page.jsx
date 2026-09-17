@@ -68,8 +68,6 @@ export default function OrdersPage() {
     }
   };
 
-  console.log(isAuthenticated, token);
-
   useEffect(() => {
     if (!isAuthenticated) {
       return;

@@ -1,5 +1,5 @@
 "use client";
-
+import { Suspense } from "react";
 import Link from "next/link";
 import {
     ChevronRight,
@@ -23,7 +23,7 @@ import {
     useSearchParams,
 } from "next/navigation";
 
-export default function ShopPage() {
+function ShopContent() {
     const [products, setProducts] = useState([]);
     const [pagination, setPagination] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -603,4 +603,12 @@ export default function ShopPage() {
             <Footer />
         </>
     );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense fallback={null}>
+      <ShopContent />
+    </Suspense>
+  );
 }

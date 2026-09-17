@@ -1,7 +1,6 @@
 "use client";
-
 import Link from "next/link";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 import {
@@ -23,7 +22,6 @@ import useCartStore from "@/store/cartStore";
 export default function Header() {
     const router = useRouter();
     const pathname = usePathname();
-    const searchParams = useSearchParams();
     const [mobileMenuOpen, setMobileMenuOpen] =
         useState(false);
 

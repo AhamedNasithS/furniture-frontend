@@ -1,5 +1,5 @@
 "use client";
-
+import { Suspense } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -15,7 +15,7 @@ import Header from "@/components/customer/Header";
 import Footer from "@/components/customer/Footer";
 import Image from "next/image";
 
-export default function SearchPage() {
+function SearchContent() {
   const searchParams = useSearchParams();
 
   const query =
@@ -413,5 +413,13 @@ export default function SearchPage() {
 
       <Footer />
     </>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={null}>
+      <SearchContent />
+    </Suspense>
   );
 }
